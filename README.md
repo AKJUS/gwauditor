@@ -26,13 +26,13 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 ## Screenshots
 *parts ommited on screenshots are related to project name
 
-![image](https://github.com/user-attachments/assets/90b07e8e-5f68-4533-9439-24c9a58835fc)
+![image](https://github.com/user-attachments/assets/489b37e0-c042-4df2-9ac9-4f5871a8d95f)
 *Script startup*
 
-![image](https://github.com/user-attachments/assets/ca49633a-6822-46f0-9374-4358959fbc14)
+![image](https://github.com/user-attachments/assets/1fe8f7c8-b506-43a3-8d81-8e82717f0a45)
 *Script completed*
 
-![image](https://github.com/user-attachments/assets/79e7962e-3947-4c82-994d-05ede931732f)
+![image](https://github.com/user-attachments/assets/6d642c0c-dfd8-4810-b674-6280b81857ce)
 *.zip file content*
 
 ## Requirements
