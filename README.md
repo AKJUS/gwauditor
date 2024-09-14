@@ -1,6 +1,6 @@
 # Script-for-Google-Workspace-audit
 
-This script collects users, groups and Shared Drives on .xlsx file for audit and review purposes. Note that it's prepared to run on GAM configured for multiple projects, change accordly if needed.
+This script collects users, groups and Shared Drives of a Google Workspace environment on .xlsx file for audit and review purposes. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed.
 
 Set variables if different of defined:
 ```
