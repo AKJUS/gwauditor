@@ -31,7 +31,7 @@ Collect .zip file on `$destinationpath` that includes the report file, a screens
 ![image](https://github.com/user-attachments/assets/ca49633a-6822-46f0-9374-4358959fbc14)
 *Script completed*
 
-![image](https://github.com/user-attachments/assets/29d74797-acb8-4083-b87c-f331d5ef358e)
+![image](https://github.com/user-attachments/assets/79e7962e-3947-4c82-994d-05ede931732f)
 *.zip file content*
 
 ## Requirements
