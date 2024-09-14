@@ -1,7 +1,7 @@
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA, PLEASE FOLLOW INSTRUCTIONS ###"
 Write-Host
 
-function pause{ $null = Read-Host 'Press any key to close the window' }
+function pause{ $null = Read-Host 'Press ENTER key to close the window' }
 
 if (Get-Module -ListAvailable -Name ImportExcel) {
     Write-Host "Module ImportExcel found, no additional installation required"
@@ -23,10 +23,14 @@ $directories = Get-ChildItem -Path $gamsettings -Directory -Exclude "gamcache" |
 $datetime = get-date -f yyyy-MM-dd-HH-mm
 
 # user should choose the project available on GAM 
-Write-Host "Please maximize window to 1:1 (1/4 if scaled 200%), a screenshot will be generated on end of it"
+Write-Host "Please keep this window active, a print screen command will be sendo to generate a screenshot of it"
 Write-Host "Projects available:" $directories
 Write-Host
-$clientName = Read-Host "Please enter project shortname"
+
+While ( ($Null -eq $clientName) -or ($clientName -eq '') ) {
+    $clientName = Read-Host -Prompt "Please enter project shortname"
+}
+
 cls
 
 # delete files used on this project on $GAMpath
@@ -54,23 +58,32 @@ Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\au
 Import-Csv .\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName groups
 Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
 
+cls
+Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA COMPLETED ###"
+
+# gather MD5 hash of .xlsx file for audit purposes
+$hash =  ((certutil -hashfile audit-$clientName-$datetime.xlsx MD5).split([Environment]::NewLine))[1]
+$currentdate = Get-Date
+$culture = [System.Globalization.CultureInfo]::GetCultureInfo("en-US")
+$currentdate = $currentdate.ToString("dddd, dd MMMM yyyy HH:mm:ss", $culture)
+
+# show info after collect report
 Write-Host
-certutil -hashfile "audit-$clientName-$datetime.xlsx" MD5; get-date
-Write-Host
+Write-Host Project used by GAM: $clientName
+Write-Host Actual date and time: $currentdate
+Write-Host MD5 hash of [audit-$clientName-$datetime.xlsx] file: $hash
 
 # print screen program
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
-$Screen = [System.Windows.Forms.SystemInformation]::WorkingArea
-$Width  = $Screen.Width
-$Height = $Screen.Height
-$Left   = $Screen.Left
-$Top    = $Screen.Top
-$bitmap  = New-Object System.Drawing.Bitmap $Width, $Height
-$graphic = [System.Drawing.Graphics]::FromImage($bitmap)
-$graphic.CopyFromScreen($Left, $Top, 0, 0, $bitmap.Size)
 
-# save print screen on $GAMpath
+# send alt + printscreen to capture the active window
+[System.Windows.Forms.SendKeys]::SendWait("%{PRTSC}")
+
+# create a bitmap to store the screenshot
+$bitmap = New-Object System.Drawing.Bitmap([System.Windows.Forms.Clipboard]::GetImage())
+
+# save the screenshot
 $bitmap.Save("$GAMpath\audit-$clientName-$datetime.bmp")
 
 # add files to .zip file on $GAMpath
@@ -79,7 +92,7 @@ Compress-Archive -Path "*.bmp" -Update -DestinationPath "audit-$clientName-$date
 Compress-Archive -Path "*.ps1" -Update -DestinationPath "audit-$clientName-$datetime.zip"
 
 Move-Item audit-$clientName-$datetime.zip $destinationpath
-Write-Host "Audit file"audit-$clientName-$datetime.zip" saved on "$destinationpath
+Write-Host "Audit [audit-$clientName-$datetime.zip] file location:"$destinationpath
 Write-Host
 
 del $GAMpath\*.csv
