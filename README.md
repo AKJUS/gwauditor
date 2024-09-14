@@ -10,7 +10,9 @@ $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Do
 ```
 
 `$gamsettings` defines the settings folder of GAM
+
 `$GAMpath` defines of GAM application folder
+
 `$destinationpath` defines the location were script result is saved
 
 Run file on PowerShell (right-click on file > Run with PowerShell)
