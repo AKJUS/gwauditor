@@ -17,7 +17,7 @@ $GAMpath = "C:\GAM7"
 $directories = Get-ChildItem -Path $gamsettings -Directory -Exclude "gamcache" | Select-Object -ExpandProperty Name
 
 # user should choose the project available on GAM 
-Write-Host "Please maximize window to 1:1 (1/4 if scalled 200%), a screenshot will be generated on end of it"
+Write-Host "Please maximize window to 1:1 (1/4 if scaled 200%), a screenshot will be generated on end of it"
 Write-Host "Projects available:" $directories
 Write-Host
 $clientName = Read-Host "Please enter project shortname"
