@@ -19,8 +19,8 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 
 ## Instructions
 
-Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
-Collect .zip file on `$destinationpath`
+* Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
+* Collect .zip file on `$destinationpath`
 
 ## Screenshots
 *parts ommited on screenshots are related to project name
