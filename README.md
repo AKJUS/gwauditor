@@ -23,3 +23,5 @@ Requirements:
 * [GAM v7+](https://github.com/GAM-team/GAM/)
 * PowerShell
 * Module `ImportExcel` on PowerShell
+
+Check 'testing-guideline.md' file as suggestion for testing guideline
