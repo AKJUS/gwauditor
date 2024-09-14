@@ -4,14 +4,14 @@ This script collects users, groups and Shared Drives on a excel file for audit a
 
 Set variables if different of defined:
 ```
-$gamsettings = "$env:USERPROFILE\.gam"
 $GAMpath = "C:\GAM7"
+$gamsettings = "$env:USERPROFILE\.gam"
 $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
 ```
 
-`$gamsettings` defines the settings folder of GAM
-
 `$GAMpath` defines of GAM application folder
+
+`$gamsettings` defines the settings folder of GAM
 
 `$destinationpath` defines the location were script result is saved
 
