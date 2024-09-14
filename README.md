@@ -22,6 +22,13 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
 Collect .zip file on `$destinationpath` that includes the report file, a screenshot and the script itself
 
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/90b07e8e-5f68-4533-9439-24c9a58835fc)
+
+![image](https://github.com/user-attachments/assets/ca49633a-6822-46f0-9374-4358959fbc14)
+
+
 ## Requirements
 
 * Windows 10+ or Windows Server 2019+
