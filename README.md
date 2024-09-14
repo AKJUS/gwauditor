@@ -24,12 +24,12 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 * Collect .zip file on `$destinationpath`
 
 ## Screenshots
-*parts ommited on screenshots are related to project name
+*parts ommited on screenshots are related to project/profile name
 
 ![image](https://github.com/user-attachments/assets/489b37e0-c042-4df2-9ac9-4f5871a8d95f)
 *Script startup*
 
-![image](https://github.com/user-attachments/assets/1fe8f7c8-b506-43a3-8d81-8e82717f0a45)
+![image](https://github.com/user-attachments/assets/08cb9aab-cb7a-4444-bf1e-f32a518ba190)
 *Script completed*
 
 ![image](https://github.com/user-attachments/assets/6d642c0c-dfd8-4810-b674-6280b81857ce)
