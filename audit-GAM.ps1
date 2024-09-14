@@ -1,5 +1,7 @@
-Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA , PLEASE FOLLOW INSTRUCTIONS ###"
+Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA, PLEASE FOLLOW INSTRUCTIONS ###"
 Write-Host
+
+function pause{ $null = Read-Host 'Press any key to close the window' }
 
 if (Get-Module -ListAvailable -Name ImportExcel) {
     Write-Host "Module ImportExcel found, no additional installation required"
@@ -12,9 +14,13 @@ else {
 }
 
 # set variables
-$gamsettings = "$env:USERPROFILE\.gam"
 $GAMpath = "C:\GAM7"
+$gamsettings = "$env:USERPROFILE\.gam"
+$destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
+
+# collect project folders on $gamsettings
 $directories = Get-ChildItem -Path $gamsettings -Directory -Exclude "gamcache" | Select-Object -ExpandProperty Name
+$datetime = get-date -f yyyy-MM-dd-HH-mm
 
 # user should choose the project available on GAM 
 Write-Host "Please maximize window to 1:1 (1/4 if scaled 200%), a screenshot will be generated on end of it"
@@ -40,16 +46,16 @@ gam select $clientName save
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module -Name ImportExcel
 
-gam redirect csv ./"users-report-$(get-date -f yyyy-MM-dd).csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended
-gam redirect csv ./"groups-report-$(get-date -f yyyy-MM-dd).csv" print groups fields email id name adminCreated members manager owners
-gam redirect csv ./"teamdriveacls-report-$(get-date -f yyyy-MM-dd).csv" print teamdriveacls oneitemperrow
+gam redirect csv ./"users-report-$datetime.csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended
+gam redirect csv ./"groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners
+gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls oneitemperrow
 
-Import-Csv .\users-report-$(get-date -f yyyy-MM-dd).csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$(get-date -f yyyy-MM-dd).xlsx -WorksheetName users
-Import-Csv .\groups-report-$(get-date -f yyyy-MM-dd).csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$(get-date -f yyyy-MM-dd).xlsx -WorksheetName groups
-Import-Csv .\teamdriveacls-report-$(get-date -f yyyy-MM-dd).csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$(get-date -f yyyy-MM-dd).xlsx -WorksheetName teamdriveacls
+Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName users
+Import-Csv .\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName groups
+Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
 
 Write-Host
-certutil -hashfile "audit-$clientName-$(get-date -f yyyy-MM-dd).xlsx" MD5; get-date
+certutil -hashfile "audit-$clientName-$datetime.xlsx" MD5; get-date
 Write-Host
 
 # print screen program
@@ -65,15 +71,15 @@ $graphic = [System.Drawing.Graphics]::FromImage($bitmap)
 $graphic.CopyFromScreen($Left, $Top, 0, 0, $bitmap.Size)
 
 # save print screen on $GAMpath
-$bitmap.Save("$GAMpath\audit-$clientName-$(get-date -f yyyy-MM-dd).bmp")
+$bitmap.Save("$GAMpath\audit-$clientName-$datetime.bmp")
 
 # add files to .zip file on $GAMpath
-Compress-Archive "*.xlsx" -DestinationPath audit-$clientName-$(get-date -f yyyy-MM-dd).zip
-Compress-Archive -Path "*.bmp" -Update -DestinationPath "audit-$clientName-$(get-date -f yyyy-MM-dd).zip"
-Compress-Archive -Path "*.ps1" -Update -DestinationPath "audit-$clientName-$(get-date -f yyyy-MM-dd).zip"
+Compress-Archive "*.xlsx" -DestinationPath audit-$clientName-$datetime.zip
+Compress-Archive -Path "*.bmp" -Update -DestinationPath "audit-$clientName-$datetime.zip"
+Compress-Archive -Path "*.ps1" -Update -DestinationPath "audit-$clientName-$datetime.zip"
 
-Move-Item audit-$clientName-$(get-date -f yyyy-MM-dd).zip (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
-Write-Host "Audit file"audit-$clientName-$(get-date -f yyyy-MM-dd).zip" saved on"(New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
+Move-Item audit-$clientName-$datetime.zip $destinationpath
+Write-Host "Audit file"audit-$clientName-$datetime.zip" saved on "$destinationpath
 Write-Host
 
 del $GAMpath\*.csv
@@ -83,3 +89,4 @@ del $GAMpath\*.ps1
 del $GAMpath\*.zip
 
 pause
+exit
