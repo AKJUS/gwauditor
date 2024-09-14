@@ -17,12 +17,12 @@ $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Do
 
 Check `testing-guideline.md` file as suggestion for testing guideline
 
-## Instructions:
+## Instructions
 
 Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
 Collect .zip file on `$destinationpath` that includes the report file, a screenshot and the script itself
 
-## Requirements:
+## Requirements
 
 * Windows 10+ or Windows Server 2019+
 * [GAM v7+](https://github.com/GAM-team/GAM/)
