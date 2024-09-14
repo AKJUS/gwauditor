@@ -9,7 +9,7 @@ $gamsettings = "$env:USERPROFILE\.gam"
 $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
 ```
 
-`$GAMpath` defines of GAM application folder
+`$GAMpath` defines the GAM application folder
 
 `$gamsettings` defines the settings folder of GAM
 
