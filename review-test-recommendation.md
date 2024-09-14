@@ -14,5 +14,3 @@ Please validate the Excel (.xlsx) document in the attached ZIP file and share yo
    - **fileOrganizer**: Content admin permission, has full control over files but cannot change Shared Drive settings.
    - **writer**: Write permission, can create and modify files but some data destruction functions are restricted.
    - **reader**: Read permission, cannot modify files.
-
-Thank you for your attention.
