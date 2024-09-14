@@ -22,4 +22,4 @@ Requirements:
 * Windows 10+ or Windows Server 2019+
 * [GAM v7+](https://github.com/GAM-team/GAM/)
 * PowerShell
-* Module ImportExcel on PowerShell
+* Module `ImportExcel` on PowerShell
