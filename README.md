@@ -1,4 +1,4 @@
-# Script-for-Google-Workspace-audit
+# Google Workspace auditor script
 
 This script collects users, groups and Shared Drives of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed.
 
