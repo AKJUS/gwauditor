@@ -1,6 +1,6 @@
 # Google Workspace auditor script
 
-This script collects users, groups and Shared Drives of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed.
+This script collects users, groups and Shared Drives of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed.
 
 Set variables if different of defined:
 ```
@@ -20,7 +20,7 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 ## Instructions
 
 Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
-Collect .zip file on `$destinationpath` that includes the report file, a screenshot and the script itself
+Collect .zip file on `$destinationpath`
 
 ## Screenshots
 *parts ommited on screenshots are related to project name
