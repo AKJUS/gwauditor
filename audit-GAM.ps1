@@ -23,7 +23,7 @@ $directories = Get-ChildItem -Path $gamsettings -Directory -Exclude "gamcache" |
 $datetime = get-date -f yyyy-MM-dd-HH-mm
 
 # user should choose the project available on GAM 
-Write-Host "Please keep this window active, a print screen command will be sendo to generate a screenshot of it"
+Write-Host "Please keep this window active, a print screen command will be send to generate a screenshot of it"
 Write-Host "Projects available:" $directories
 Write-Host
 
