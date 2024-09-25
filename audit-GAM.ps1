@@ -50,12 +50,18 @@ gam select $clientName save
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module -Name ImportExcel
 
+# collect users information
 gam redirect csv ./"users-report-$datetime.csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended
+# collect groups information
 gam redirect csv ./"groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners
+# collect shared drives information
 gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls oneitemperrow
 
+# add users report to Excel file
 Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName users
+# add groups report to Excel file
 Import-Csv .\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName groups
+# add shared drives report to Excel file
 Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
 
 cls
