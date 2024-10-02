@@ -1,9 +1,7 @@
 # Google Workspace auditor script
 
-<a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/stars/ivancarlos-me/Google-Workspace-auditor?style=flat" /></a> <a target="_blank" href="https://hub.docker.com/r/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/docker/pulls/ivancarlos-me/Google-Workspace-auditor" /></a> <a target="_blank" href="https://hub.docker.com/r/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/docker/v/ivancarlos-me/Google-Workspace-auditor/latest?label=docker%20image%20ver." /></a> <a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/last-commit/ivancarlos-me/Google-Workspace-auditor" /></a>  <a target="_blank" href="https://opencollective.com/Google-Workspace-auditor"><img src="https://opencollective.com/Google-Workspace-auditor/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen" /></a>
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) <a href="https://weblate.kuma.pet/projects/Google-Workspace-auditor/uptime-kumaGoogle-Workspace-auditor/">
-<img src="https://weblate.kuma.pet/widgets/Google-Workspace-auditor/-/svg-badge.svg" alt="Translation status" />
-</a>
+<a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/stars/ivancarlos-me/Google-Workspace-auditor?style=flat" /></a> <a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/last-commit/ivancarlos-me/Google-Workspace-auditor" /></a>  <a target="_blank" href="https://opencollective.com/Google-Workspace-auditor"><img src="https://opencollective.com/Google-Workspace-auditor/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen" /></a>
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) 
 
 <img src="https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg" width="700" alt="" />
 
