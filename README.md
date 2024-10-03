@@ -1,6 +1,7 @@
 # Google Workspace auditor script
 
-<a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/stars/ivancarlos-me/Google-Workspace-auditor?style=flat" /></a> <a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/last-commit/ivancarlos-me/Google-Workspace-auditor" /></a>  <a target="_blank" href="https://opencollective.com/Google-Workspace-auditor"><img src="https://opencollective.com/Google-Workspace-auditor/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen" /></a>
+<a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/stars/ivancarlos-me/Google-Workspace-auditor?style=flat" /></a>
+<a target="_blank" href="https://github.com/ivancarlos-me/Google-Workspace-auditor"><img src="https://img.shields.io/github/last-commit/ivancarlos-me/Google-Workspace-auditor" /></a>  <a target="_blank" href="https://opencollective.com/Google-Workspace-auditor"><img src="https://opencollective.com/Google-Workspace-auditor/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen" /></a>
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlos-me?label=GitHub%20Sponsors)](https://github.com/sponsors/ivancarlos-me) 
 
 This script collects users, groups and Shared Drives of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed.
