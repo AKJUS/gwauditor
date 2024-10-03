@@ -1,4 +1,4 @@
-# Google Workspace auditor script
+# Google Workspace Auditor script
 
 <a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?style=flat" /></a>
 <a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor" /></a>
