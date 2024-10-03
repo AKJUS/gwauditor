@@ -1,7 +1,7 @@
 # Google Workspace auditor script
 
-<a target="_blank" href="https://github.com/ivancarlosti/Google-Workspace-auditor"><img src="https://img.shields.io/github/stars/ivancarlosti/Google-Workspace-auditor?style=flat" /></a>
-<a target="_blank" href="https://github.com/ivancarlosti/Google-Workspace-auditor"><img src="https://img.shields.io/github/last-commit/ivancarlosti/Google-Workspace-auditor" /></a>
+<a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?style=flat" /></a>
+<a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor" /></a>
 <a target="_blank" href="https://opencollective.com/gwauditor"><img src="https://opencollective.com/gwauditor/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen" /></a>
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)](https://github.com/sponsors/ivancarlosti)
 
