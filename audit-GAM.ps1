@@ -61,7 +61,7 @@ gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls onei
 # collect youtube channels information
 gam all users_ns_susp print youtubechannels fields id snippet statistics > ./"youtube-report-$datetime.csv"
 # collect analytics information
-gam all users_ns_susp print analyticaccounts > ./"analytics-report-$datetime.csv"
+gam all users_ns_susp print analyticaccountsummaries > ./"analytics-report-$datetime.csv"
 # collect policies information
 gam redirect csv ./"policies-report-$datetime.csv" print policies
 
