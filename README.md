@@ -28,7 +28,9 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 * Collect .zip file on `$destinationpath`
 
 * If you get error, remember to check OAuth and Service Account permissions:
+
 `gam user user@domain.example check serviceaccount`
+
 `gam oauth delete && gam oauth create`
 
 ## Screenshots
