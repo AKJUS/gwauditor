@@ -62,6 +62,8 @@ gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls onei
 gam all users_ns_susp print youtubechannels fields id snippet statistics > ./"youtube-report-$datetime.csv"
 # collect analytics information
 gam all users_ns_susp print analyticaccounts > ./"analytics-report-$datetime.csv"
+# collect policies information
+gam redirect csv ./"policies-report-$datetime.csv" print policies
 
 # add users report to Excel file
 Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName users
@@ -73,6 +75,8 @@ Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -P
 Import-Csv .\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName youtube
 # add analytics report to Excel file
 Import-Csv .\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName analytics
+# add policies report to Excel file
+Import-Csv .\policies-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName policies
 
 cls
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA COMPLETED ###"
