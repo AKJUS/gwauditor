@@ -1,3 +1,5 @@
+[console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA, PLEASE FOLLOW INSTRUCTIONS ###"
 Write-Host
 
@@ -56,6 +58,10 @@ gam redirect csv ./"users-report-$datetime.csv" print users fields primaryEmail 
 gam redirect csv ./"groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners
 # collect shared drives information
 gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls oneitemperrow
+# collect youtube channels information
+gam all users_ns_susp print youtubechannels fields id snippet statistics > ./"youtube-report-$datetime.csv"
+# collect analytics information
+gam all users_ns_susp print analyticaccounts > ./"analytics-report-$datetime.csv"
 
 # add users report to Excel file
 Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName users
@@ -63,6 +69,10 @@ Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\au
 Import-Csv .\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName groups
 # add shared drives report to Excel file
 Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
+# add youtube report to Excel file
+Import-Csv .\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName youtube
+# add analytics report to Excel file
+Import-Csv .\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName analytics
 
 cls
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA COMPLETED ###"
