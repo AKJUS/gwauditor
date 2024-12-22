@@ -1,5 +1,5 @@
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
-
+cls
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA, PLEASE FOLLOW INSTRUCTIONS ###"
 Write-Host
 
