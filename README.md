@@ -26,8 +26,7 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 * Save `audit-GAM.ps1` file locally and update variables if needed
 * Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
 * Collect .zip file on `$destinationpath`
-
-* If you get error, remember to check OAuth and Service Account permissions:
+* If your policies TAB is empty please check service account permissions and recreate OAuth:
 
 `gam user user@domain.example check serviceaccount`
 
