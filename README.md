@@ -27,6 +27,10 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 * Run `audit-GAM.ps1` file on PowerShell (right-click on file > Run with PowerShell)
 * Collect .zip file on `$destinationpath`
 
+* If you get error, remember to check OAuth and Service Account permissions:
+`gam user user@domain.example check serviceaccount`
+`gam oauth delete && gam oauth create`
+
 ## Screenshots
 *parts ommited on screenshots are related to project/profile name
 
