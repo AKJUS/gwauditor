@@ -26,6 +26,7 @@ cls
 cd $GAMpath
 
 gam select $clientName save
+Write-Host
 
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
@@ -125,6 +126,32 @@ while ($true) {
     }
 }
 
+function Check-AdminAuth {
+    param (
+        [string]$adminAddress
+    )
+
+    # Run GAM command to check if the admin address have auth
+    $output = gyb --action check-service-account --email $adminAddress 2>&1
+
+    # Check the output for errors
+    if ($output -match "Some scopes failed") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+while ($true) {
+    # Check if the admin address exists
+    if (Check-AdminAuth -adminAddress $adminAddress) {
+        break
+    } else {
+        Write-Host "The admin mailbox $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
+		gyb --action check-service-account --email $adminAddress
+    }
+}
+
 cd $GYBpath
 
 Write-Host
@@ -142,9 +169,12 @@ foreach ($file in $filesToCopy) {
 }
 
 Write-Host
+Write-Host
+Write-Host
 Write-Host "### SCRIPT TO COPY GOOGLE WORKSPACE MAILBOX TO A GROUP COMPLETED ###"
+Write-Host "### If it completed fine you can delete the backup folder below: ###"
+Write-Host ">>>" $GYBpath\GYB-GMail-Backup-$sourceAddress
 
-# gather MD5 hash of .xlsx file for audit purposes
 $currentdate = Get-Date
 $culture = [System.Globalization.CultureInfo]::GetCultureInfo("en-US")
 $currentdate = $currentdate.ToString("dddd, dd MMMM yyyy HH:mm:ss", $culture)
@@ -153,6 +183,7 @@ $currentdate = $currentdate.ToString("dddd, dd MMMM yyyy HH:mm:ss", $culture)
 Write-Host
 Write-Host Project used by GAM: $clientName
 Write-Host Actual date and time: $currentdate
+Write-Host
 
 pause
 exit

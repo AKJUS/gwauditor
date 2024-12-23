@@ -48,6 +48,61 @@ Copy-Item $MyInvocation.MyCommand.Name $GAMpath
 cd $GAMpath
 
 gam select $clientName save
+Write-Host
+
+function Check-AdminAddress {
+    param (
+        [string]$adminAddress
+    )
+
+    # Run GAM command to check if the admin address exists
+    $output = gam info user $adminAddress 2>&1
+
+    # Check the output for errors
+    if ($output -match "Does not exist" -or $output -match "Show Info Failed" -or $output -match "ERROR" -or $output -match "Super Admin: False") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+while ($true) {
+    # Prompt for the admin address
+    $adminAddress = Read-Host "Please enter the admin mailbox address"
+
+    # Check if the admin address exists
+    if (Check-AdminAddress -adminAddress $adminAddress) {
+        break
+    } else {
+        Write-Host "The admin mailbox $adminAddress does not exist, its a group or we have an ERROR. Please check credentials and try again."
+    }
+}
+
+function Check-AdminAuth {
+    param (
+        [string]$adminAddress
+    )
+
+    # Run GAM command to check if the admin address have auth
+    $output = gam user $adminAddress check serviceaccount 2>&1
+
+    # Check the output for errors
+    if ($output -match "Some scopes failed") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+while ($true) {
+    # Check if the admin address exists
+    if (Check-AdminAuth -adminAddress $adminAddress) {
+        break
+    } else {
+        Write-Host "The admin mailbox $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
+		gam user $adminAddress check serviceaccount
+    }
+}
 
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module -Name ImportExcel
