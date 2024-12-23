@@ -107,30 +107,48 @@ while ($true) {
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module -Name ImportExcel
 
-# collect users information
+Write-Host
+Write-Host "## collect users information ##"
 gam redirect csv ./"users-report-$datetime.csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended
-# collect groups information
+Write-Host
+Write-Host "## collect groups information ##"
 gam redirect csv ./"groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners
-# collect shared drives information
+Write-Host
+Write-Host "## collect shared drives information ##"
 gam redirect csv ./"teamdriveacls-report-$datetime.csv" print teamdriveacls oneitemperrow
-# collect youtube channels information
+Write-Host
+Write-Host "## collect mailbox delegation information ##"
+gam all users print delegates shownames > ./"delegates-report-$datetime.csv"
+Write-Host
+Write-Host "## collect youtube channels information ##"
 gam all users_ns_susp print youtubechannels fields id snippet statistics > ./"youtube-report-$datetime.csv"
-# collect analytics information
+Write-Host
+Write-Host "## collect analytics information ##"
 gam all users_ns_susp print analyticaccountsummaries > ./"analytics-report-$datetime.csv"
-# collect policies information
+Write-Host
+Write-Host "## collect policies information ##"
 gam redirect csv ./"policies-report-$datetime.csv" print policies
 
-# add users report to Excel file
+Write-Host
+Write-Host "## add users report to Excel file ##"
 Import-Csv .\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName users
-# add groups report to Excel file
+Write-Host
+Write-Host "## add groups report to Excel file ##"
 Import-Csv .\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName groups
-# add shared drives report to Excel file
+Write-Host
+Write-Host "## add shared drives report to Excel file ##"
 Import-Csv .\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
-# add youtube report to Excel file
+Write-Host
+Write-Host "## add delegates report to Excel file ##"
+Import-Csv .\delegates-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName delegates
+Write-Host
+Write-Host "## add youtube report to Excel file ##"
 Import-Csv .\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName youtube
-# add analytics report to Excel file
+Write-Host
+Write-Host "## add analytics report to Excel file ##"
 Import-Csv .\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName analytics
-# add policies report to Excel file
+Write-Host
+Write-Host "## add policies report to Excel file ##"
 Import-Csv .\policies-report-$datetime.csv -Delimiter ',' | Export-Excel -Path .\audit-$clientName-$datetime.xlsx -WorksheetName policies
 
 cls
@@ -147,6 +165,9 @@ Write-Host
 Write-Host Project used by GAM: $clientName
 Write-Host Actual date and time: $currentdate
 Write-Host MD5 hash of [audit-$clientName-$datetime.xlsx] file: $hash
+
+# wait to print info on screen for print screen
+Start-Sleep -Seconds 2
 
 # print screen program
 Add-Type -AssemblyName System.Windows.Forms
