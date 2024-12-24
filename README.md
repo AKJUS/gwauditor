@@ -21,6 +21,8 @@ $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Do
 
 Check `testing-guideline.md` file as suggestion for testing guideline
 
+You can find scripts related to mailbox delegation and mailbox archive to group in `Other scripts` folder
+
 ## Instructions
 
 * Save `audit-GAM.ps1` file locally and update variables if needed
