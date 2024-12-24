@@ -68,15 +68,21 @@ function Check-AdminAddress {
 
 while ($true) {
     # Prompt for the admin address
-    $adminAddress = Read-Host "Please enter the admin mailbox address"
+    $adminAddress = Read-Host "Please enter the admin account"
+
+    # Check if the input is empty
+    if ([string]::IsNullOrWhiteSpace($adminAddress)) {
+        continue
+    }
 
     # Check if the admin address exists
     if (Check-AdminAddress -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin mailbox $adminAddress does not exist, its a group or we have an ERROR. Please check credentials and try again."
+        Write-Host "The admin account $adminAddress does not exist, or we have an ERROR. Please check credentials and try again."
     }
 }
+
 
 function Check-AdminAuth {
     param (
@@ -99,7 +105,7 @@ while ($true) {
     if (Check-AdminAuth -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin mailbox $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
+        Write-Host "The admin account $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
 		gam user $adminAddress check serviceaccount
     }
 }

@@ -27,8 +27,6 @@ cd $GAMpath
 gam select $clientName save
 Write-Host
 
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-
 function Check-AdminAddress {
     param (
         [string]$adminAddress
@@ -47,15 +45,21 @@ function Check-AdminAddress {
 
 while ($true) {
     # Prompt for the admin address
-    $adminAddress = Read-Host "Please enter the admin mailbox address"
+    $adminAddress = Read-Host "Please enter the admin account"
+
+    # Check if the input is empty
+    if ([string]::IsNullOrWhiteSpace($adminAddress)) {
+        continue
+    }
 
     # Check if the admin address exists
     if (Check-AdminAddress -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin mailbox $adminAddress does not exist, its a group or we have an ERROR. Please check credentials and try again."
+        Write-Host "The admin account $adminAddress does not exist, or we have an ERROR. Please check credentials and try again."
     }
 }
+
 
 function Check-AdminAuth {
     param (
@@ -63,7 +67,7 @@ function Check-AdminAuth {
     )
 
     # Run GAM command to check if the admin address have auth
-    $output = gyb --action check-service-account --email $adminAddress 2>&1
+    $output = gam user $adminAddress check serviceaccount 2>&1
 
     # Check the output for errors
     if ($output -match "Some scopes failed") {
@@ -78,8 +82,8 @@ while ($true) {
     if (Check-AdminAuth -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin mailbox $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
-		gyb --action check-service-account --email $adminAddress
+        Write-Host "The admin account $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
+		gam user $adminAddress check serviceaccount
     }
 }
 
@@ -133,25 +137,33 @@ while ($true) {
     # Prompt for the mailbox address
     $sourceAddress = Read-Host "Please enter the mailbox address"
 
+    # Check if the input is empty
+    if ([string]::IsNullOrWhiteSpace($sourceAddress)) {
+        continue
+    }
+
     # Check if the mailbox address exists
     if (Check-EmailAddress -sourceAddress $sourceAddress) {
         break
     } else {
-        Write-Host "The mailbox $sourceAddress does not exist, its a group or we have an ERROR. Please check credentials and try again."
+        Write-Host "The mailbox $sourceAddress does not exist, it's a group, or we have an ERROR. Please check credentials and try again."
     }
 }
 
-Write-Host
-Write-Host Checking delegation using command: "gam user $sourceAddress show delegates"
-Write-Host
-gam user $sourceAddress show delegates
+# Function to list delegates
+function List-Delegates {
+    param (
+        [string]$sourceAddress
+    )
+    gam user $sourceAddress show delegates
+}
 
 # Function to add delegates
 function Add-Delegates {
     param (
         [string]$sourceAddress
     )
-    $delegatedAddress = Read-Host "Please enter the mailbox to enable access to $sourceAddress's mailbox"
+    $delegatedAddress = Read-Host "Please enter the mailbox or group to enable access to $sourceAddress's mailbox"
     gam user $sourceAddress add delegates $delegatedAddress
 }
 
@@ -160,7 +172,7 @@ function Remove-Delegates {
     param (
         [string]$sourceAddress
     )
-    $delegatedAddress = Read-Host "Please enter the mailbox to remove access to $sourceAddress's mailbox"
+    $delegatedAddress = Read-Host "Please enter the mailbox or group to remove access to $sourceAddress's mailbox"
     gam user $sourceAddress del delegates $delegatedAddress
 }
 
@@ -168,21 +180,25 @@ function Remove-Delegates {
 while ($true) {
 	Write-Host
     Write-Host "Select an option:"
-    Write-Host "1. Add Delegates"
-    Write-Host "2. Remove Delegates"
-    Write-Host "3. Exit"
+    Write-Host "1. List Delegates"
+    Write-Host "2. Add Delegates"
+    Write-Host "3. Remove Delegates"
+    Write-Host "4. Exit"
 	Write-Host
 
     $choice = Read-Host "Enter your choice"
 
     switch ($choice) {
         1 {
-            Add-Delegates -sourceAddress $sourceAddress
+            List-Delegates -sourceAddress $sourceAddress
         }
         2 {
-            Remove-Delegates -sourceAddress $sourceAddress
+            Add-Delegates -sourceAddress $sourceAddress
         }
         3 {
+            Remove-Delegates -sourceAddress $sourceAddress
+        }
+        4 {
 			Write-Host
             Write-Host "### SCRIPT TO MANAGE MAILBOX DELEGATION COMPLETED ###"
 
