@@ -1,3 +1,5 @@
+# Main script
+
 # set variables
 $GAMpath = "C:\GAM7"
 $gamsettings = "$env:USERPROFILE\.gam"
@@ -5,7 +7,7 @@ $destinationpath = (New-Object -ComObject Shell.Application).NameSpace('shell:Do
 
 # collect project folders on $gamsettings
 $directories = Get-ChildItem -Path $gamsettings -Directory -Exclude "gamcache" | Select-Object -ExpandProperty Name
-$datetime = get-date -f yyyy-MM-dd-HH-mm
+$datetime = get-date -f yyyy-MM-dd-HH-mm-ss
 
 function Show-Menu {
     cls
@@ -34,6 +36,16 @@ function Select-GAMProject {
     Write-Host "DEBUG: clientName is set to $clientName"
 }
 
+function Run-AuditReportScript {
+    Start-Process PowerShell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File .\_script_AuditReport.ps1 -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime -destinationpath $destinationpath" -Wait
+}
+function Run-ArchiveMailboxMessagesScript {
+    Start-Process PowerShell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File .\_script_ArchiveMailboxMessages.ps1 -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime" -Wait
+}
+function Run-MailboxDelegationScript {
+    Start-Process PowerShell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File .\_script_MailboxDelegation.ps1 -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime" -Wait
+}
+
 while ($true) {
     if (-not $clientName) {
         Select-GAMProject
@@ -46,20 +58,19 @@ while ($true) {
         switch ($option) {
             '1' {
                 # Call Google Workspace Auditor script to generate audit report
-                & ".\_script_GenerateAuditReport.ps1"
+                Run-AuditReportScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -destinationpath $destinationpath
             }
             '2' {
                 # Call script to archive mailbox messages to group
-                & ".\_script_ArchiveMailboxMessages.ps1"
+                Run-ArchiveMailboxMessagesScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings
             }
             '3' {
                 # Call script to list, add, or remove mailbox delegation
-                & ".\_script_MailboxDelegation.ps1"
+                Run-MailboxDelegationScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings
             }
             '4' {
                 # Change GAM project
                 Select-GAMProject
-                Write-Host "DEBUG: After Select-GAMProject, clientName is $clientName"
             }
             '5' {
                 Write-Output "Exiting script."
@@ -73,9 +84,8 @@ while ($true) {
     catch {
         Write-Host "An error occurred: $_"
     }
-}
 
-# Prevent the script from closing immediately if the exit option is chosen
-if ($option -ne '5') {
-    Read-Host -Prompt "Press Enter to exit"
+    if ($option -eq '5') {
+        break
+    }
 }

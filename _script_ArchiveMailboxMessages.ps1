@@ -1,9 +1,22 @@
+# Archive Mailbox Messages Script
+
+param (
+    [string]$clientName,
+    [string]$GAMpath,
+    [string]$gamsettings,
+	[string]$datetime
+)
+
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 cls
 
 Write-Host "### SCRIPT TO ARCHIVE GOOGLE WORKSPACE MAILBOX TO A GROUP, PLEASE FOLLOW INSTRUCTIONS ###"
+Write-Host
 Write-Host "GAM project selected: $clientName"
+Write-Host "GAM application path: $GAMpath"
+Write-Host "Project path: $gamsettings"
+Write-Host "Date and time: $datetime"
 Write-Host
 function pause{ $null = Read-Host 'Press ENTER key to end script' }
 Write-Host

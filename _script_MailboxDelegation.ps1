@@ -1,12 +1,33 @@
+# Mailbox Delegation Script
+
+param (
+    [string]$clientName,
+    [string]$GAMpath,
+    [string]$gamsettings,
+	[string]$datetime
+)
+
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 cls
 
 Write-Host "### SCRIPT TO MANAGE MAILBOX DELEGATION, PLEASE FOLLOW INSTRUCTIONS ###"
+Write-Host
 Write-Host "GAM project selected: $clientName"
+Write-Host "GAM application path: $GAMpath"
+Write-Host "Project path: $gamsettings"
+Write-Host "Date and time: $datetime"
 Write-Host
 function pause{ $null = Read-Host 'Press ENTER key to end script' }
 Write-Host
+
+function Check-AdminAddress {
+    param (
+        [string]$adminAddress
+    )
+
+    # Run GAM command to check if the admin address exists
+    $output = gam info user $adminAddress 2>&1
 
     # Check the output for errors
     if ($output -match "Does not exist" -or $output -match "Show Info Failed" -or $output -match "ERROR" -or $output -match "Super Admin: False") {
@@ -39,7 +60,7 @@ function Check-AdminAuth {
         [string]$adminAddress
     )
 
-    # Run GAM command to check if the admin address have auth
+    # Run GAM command to check if the admin address has auth
     $output = gam user $adminAddress check serviceaccount 2>&1
 
     # Check the output for errors
@@ -55,8 +76,8 @@ while ($true) {
     if (Check-AdminAuth -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin account $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
-		gam user $adminAddress check serviceaccount
+        Write-Host "The admin account $adminAddress does not have proper authorization, we will run the command again to let you authorize it:"
+        gam user $adminAddress check serviceaccount
     }
 }
 
@@ -70,15 +91,15 @@ function Check-PolicySettings {
     $output = $(gam print policies filter "$filter" 2>&1)
 
     # Check if the output contains the specified messages
-    if ($output -match "False,True,ADMIN" -or $output -match "False,False,ADMIN") {
-        Write-Host "WARNING: You can proceed but mailbox delegation is disabled."
-        Write-Host "Users may not be able to access delegated mailbox."
-		Write-Host "Please enable it in https://admin.google.com/ac/apps/gmail/usersettings"
-		Write-Host
+    if ($output -match "False,True,ADMIN" -or $output -match "False,False,ADMIN" -or $output -match "Got 0 Policies" -or $output -match "insufficient") {
+        Write-Host "WARNING: You can proceed but policies unreachable or mailbox delegation disabled."
+        Write-Host "Users may not be able to access the delegated mailbox."
+        Write-Host "Please check it in https://admin.google.com/ac/apps/gmail/usersettings"
+        Write-Host
         return $false
     } else {
         Write-Host "Mailbox delegation is enabled, you are good to go."
-		Write-Host
+        Write-Host
         return $true
     }
 }
@@ -151,13 +172,13 @@ function Remove-Delegates {
 
 # Menu options
 while ($true) {
-	Write-Host
+    Write-Host
     Write-Host "Select an option:"
     Write-Host "1. List Delegates"
     Write-Host "2. Add Delegates"
     Write-Host "3. Remove Delegates"
     Write-Host "4. Exit"
-	Write-Host
+    Write-Host
 
     $choice = Read-Host "Enter your choice"
 
@@ -172,25 +193,28 @@ while ($true) {
             Remove-Delegates -sourceAddress $sourceAddress
         }
         4 {
-			Write-Host
+            Write-Host
             Write-Host "### SCRIPT TO MANAGE MAILBOX DELEGATION COMPLETED ###"
 
-			$currentdate = Get-Date
-			$culture = [System.Globalization.CultureInfo]::GetCultureInfo("en-US")
-			$currentdate = $currentdate.ToString("dddd, dd MMMM yyyy HH:mm:ss", $culture)
+            $currentdate = Get-Date
+            $culture = [System.Globalization.CultureInfo]::GetCultureInfo("en-US")
+            $currentdate = $currentdate.ToString("dddd, dd MMMM yyyy HH:mm:ss", $culture)
 
-			# show info after running script
-			Write-Host
-			Write-Host Project used by GAM: $clientName
-			Write-Host Actual date and time: $currentdate
-			Write-Host
+            # show info after running the script
+            Write-Host
+            Write-Host Project used by GAM: $clientName
+            Write-Host Actual date and time: $currentdate
+            Write-Host
 
-			pause
-			exit
-			break
+            pause
+            break
         }
         default {
             Write-Host "Invalid option, please try again."
         }
+    }
+
+    if ($choice -eq '4') {
+        break
     }
 }
