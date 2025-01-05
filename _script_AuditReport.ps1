@@ -20,7 +20,7 @@ Write-Host "Project path: $gamsettings"
 Write-Host "Date and time: $datetime"
 Write-Host "Destination path: $destinationpath"
 Write-Host
-function pause{ $null = Read-Host 'Press ENTER key to end script' }
+function pause{ $null = Read-Host 'Press ENTER key to proceed' }
 Write-Host
 
 if (Get-Module -ListAvailable -Name ImportExcel) {
@@ -72,7 +72,8 @@ while ($true) {
     if (Check-AdminAddress -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin account $adminAddress does not exist, or we have an ERROR. Please check credentials and try again."
+        Write-Host "The admin account $adminAddress does not exist, or we have an ERROR. Please check credentials and try again, if correct, run >>>gam oauth delete && gam oauth create<<< and come back."
+		pause
     }
 }
 
@@ -82,7 +83,7 @@ function Check-AdminAuth {
         [string]$adminAddress
     )
 
-    # Run GAM command to check if the admin address have auth
+    # Run GAM command to check if the admin address has auth
     $output = gam user $adminAddress check serviceaccount 2>&1
 
     # Check the output for errors
@@ -98,10 +99,34 @@ while ($true) {
     if (Check-AdminAuth -adminAddress $adminAddress) {
         break
     } else {
-        Write-Host "The admin account $adminAddress do not have proper authorization, we will run again the command to let you authorize it:"
-		gam user $adminAddress check serviceaccount
+        Write-Host "The admin account $adminAddress does not have proper authorization, run >>>gam user $adminAddress check serviceaccount<<< and come back."
+		pause
     }
 }
+
+
+function Check-PoliciesAuth {
+    # Run GAM command to check policies
+    $output = gam info policies user_takeout_status 2>&1
+
+    # Check the output for the word "insufficient"
+    if ($output -match "insufficient") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+while ($true) {
+    # Check policies authorization
+    if (Check-PoliciesAuth) {
+        break
+    } else {
+        Write-Host "The project does not have proper policies authorization, run >>>gam oauth delete && gam oauth create<<< and come back."
+		pause
+    }
+}
+
 
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module -Name ImportExcel

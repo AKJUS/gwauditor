@@ -58,15 +58,15 @@ while ($true) {
         switch ($option) {
             '1' {
                 # Call Google Workspace Auditor script to generate audit report
-                Run-AuditReportScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -destinationpath $destinationpath
+                Run-AuditReportScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime -destinationpath $destinationpath
             }
             '2' {
                 # Call script to archive mailbox messages to group
-                Run-ArchiveMailboxMessagesScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings
+                Run-ArchiveMailboxMessagesScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime
             }
             '3' {
                 # Call script to list, add, or remove mailbox delegation
-                Run-MailboxDelegationScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings
+                Run-MailboxDelegationScript -clientName $clientName -GAMpath $GAMpath -gamsettings $gamsettings -datetime $datetime
             }
             '4' {
                 # Change GAM project
