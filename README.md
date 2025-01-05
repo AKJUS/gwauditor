@@ -30,11 +30,6 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 * Save all .ps1 files locally and update variables if needed
 * Change variables of `mainscript.ps1` if needed and run it on PowerShell (right-click on file > Run with PowerShell)
 * Follow instructions selecting project name, option 1 to generate audit report and collect .zip file on `$destinationpath`
-* If your policies TAB is empty please check service account permissions and recreate OAuth:
-
-`gam user user@domain.example check serviceaccount`
-
-`gam oauth delete && gam oauth create`
 
 ## Screenshots
 *parts ommited on screenshots are related to project/profile name
