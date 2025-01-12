@@ -133,10 +133,10 @@ Import-Module -Name ImportExcel
 
 Write-Host
 Write-Host "## collect users information ##"
-gam redirect csv "$GAMpath\users-report-$datetime.csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended
+gam redirect csv "$GAMpath\users-report-$datetime.csv" print users fields primaryEmail creationTime id isAdmin isDelegatedAdmin isEnforcedIn2Sv isEnrolledIn2Sv lastLoginTime name suspended aliases
 Write-Host
 Write-Host "## collect groups information ##"
-gam redirect csv "$GAMpath\groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners
+gam redirect csv "$GAMpath\groups-report-$datetime.csv" print groups fields email id name adminCreated members manager owners aliases
 Write-Host
 Write-Host "## collect shared drives information ##"
 gam redirect csv "$GAMpath\teamdriveacls-report-$datetime.csv" print teamdriveacls oneitemperrow
@@ -149,6 +149,9 @@ gam all users_ns_susp print youtubechannels fields id snippet statistics > "$GAM
 Write-Host
 Write-Host "## collect analytics information ##"
 gam all users_ns_susp print analyticaccountsummaries > "$GAMpath\analytics-report-$datetime.csv"
+Write-Host
+Write-Host "## collect policies information ##"
+gam redirect csv "$GAMpath\domains-report-$datetime.csv" print domains
 Write-Host
 Write-Host "## collect policies information ##"
 gam redirect csv "$GAMpath\policies-report-$datetime.csv" print policies
@@ -171,6 +174,9 @@ Import-Csv $GAMpath\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -
 Write-Host
 Write-Host "## add analytics report to Excel file ##"
 Import-Csv $GAMpath\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName analytics
+Write-Host
+Write-Host "## add domains report to Excel file ##"
+Import-Csv $GAMpath\domains-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName domains
 Write-Host
 Write-Host "## add policies report to Excel file ##"
 Import-Csv $GAMpath\policies-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName policies
