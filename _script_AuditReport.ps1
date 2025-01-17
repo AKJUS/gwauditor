@@ -158,28 +158,28 @@ gam redirect csv "$GAMpath\policies-report-$datetime.csv" print policies
 
 Write-Host
 Write-Host "## add users report to Excel file ##"
-Import-Csv $GAMpath\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName users
+Import-Csv $GAMpath\users-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName users -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add groups report to Excel file ##"
-Import-Csv $GAMpath\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName groups
+Import-Csv $GAMpath\groups-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName groups -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add shared drives report to Excel file ##"
-Import-Csv $GAMpath\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls
+Import-Csv $GAMpath\teamdriveacls-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName teamdriveacls -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add delegates report to Excel file ##"
-Import-Csv $GAMpath\delegates-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName delegates
+Import-Csv $GAMpath\delegates-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName delegates -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add youtube report to Excel file ##"
-Import-Csv $GAMpath\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName youtube
+Import-Csv $GAMpath\youtube-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName youtube -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add analytics report to Excel file ##"
-Import-Csv $GAMpath\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName analytics
+Import-Csv $GAMpath\analytics-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName analytics -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add domains report to Excel file ##"
-Import-Csv $GAMpath\domains-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName domains
+Import-Csv $GAMpath\domains-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName domains -AutoSize -TableName $sheet.Name -TableStyle Light1
 Write-Host
 Write-Host "## add policies report to Excel file ##"
-Import-Csv $GAMpath\policies-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName policies
+Import-Csv $GAMpath\policies-report-$datetime.csv -Delimiter ',' | Export-Excel -Path $GAMpath\audit-$clientName-$datetime.xlsx -WorksheetName policies -AutoSize -TableName $sheet.Name -TableStyle Light1
 
 cls
 Write-Host "### SCRIPT TO COLLECT GOOGLE WORKSPACE DATA COMPLETED ###"
