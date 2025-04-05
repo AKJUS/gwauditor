@@ -10,13 +10,13 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 [![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/tree/main?tab=coc-ov-file)
 
-## 🌐 Connect Securely
+## 🌐 Connect With Me
 
-[![Signal](https://img.shields.io/badge/Signal-@ivancarlos-2592E9?logo=signal&style=for-the-badge)](https://icc.gg/-signal)  
-[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram&style=for-the-badge)](https://t.me/ivancarlos)  
-[![Twitter](https://img.shields.io/badge/Twitter-@ivancarlos-1DA1F2?logo=twitter&style=for-the-badge)](https://twitter.com/ivancarlos)  
-[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads&style=for-the-badge)](https://threads.net/@ivancarlos)  
-[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram&style=for-the-badge)](https://instagram.com/ivancarlos)
+[![Twitter](https://img.shields.io/badge/Twitter-@ivancarlos-1DA1F2?logo=twitter)](https://twitter.com/ivancarlos)  
+[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)  
+[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)  
+[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)  
+[![Signal](https://img.shields.io/badge/Signal-@ivancarlos-2592E9?logo=signal)](https://icc.gg/-signal)
 
 ## Details
 This script collects users, groups, mailboxes delegation, Shared Drives, YouTube accounts, Analytics accounts, policies of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed. This project also offer extra features:
