@@ -4,8 +4,8 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 ## Status
 <a target="_blank" href="./"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=Stars&style=flat" /></a>
 <a target="_blank" href="./"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor?label=Last%20Commit" /></a>
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor)](https://github.com/ivancarlosti/gwauditor/issues)
-[![License](https://img.shields.io/github/license/ivancarlosti/gwauditor)](LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)
+[![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
 [![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/tree/main?tab=coc-ov-file)
