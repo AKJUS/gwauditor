@@ -7,8 +7,8 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 https://github.com/ivancarlosti/gwauditor/commits/main/
 # My Project
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/username/repo)](./commits)  
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/username/repo)](./pulse)  
+[![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/gwauditor)](./commits)  
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/gwauditor)](./pulse)  
 
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
