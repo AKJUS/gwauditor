@@ -67,7 +67,7 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 [**buying me a coffee**][buymeacoffee], [**donate by paypal**][paypal], [**sponsor this project**][sponsor] or just [**leave a star**](../..)⭐
 |Thanks for your support, it is much appreciated!|
 
-## 🌐 Connect With Me
+## 🌐 Connect with me
 [![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord&logoColor=white)](https://discord.com/users/ivancarlos.me)
 [![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal&logoColor=white)](https://icc.gg/-signal)
 [![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram&logoColor=white)](https://t.me/ivancarlos)  
