@@ -4,9 +4,9 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/gwauditor/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/gwauditor?label=Last%20Commit)](https://github.com/ivancarlosti/gwauditor/commits)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/gwauditor?label=Commit%20Activity)](https://github.com/ivancarlosti/gwauditor/pulse)
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)  
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?color=orange)](https://github.com/ivancarlosti/gwauditor/issues)  
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
+[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/gwauditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/tree/main?tab=coc-ov-file)
 
 ## Details
@@ -68,14 +68,14 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 |Thanks for your support, it is much appreciated!|
 
 ## 🌐 Connect With Me
-[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord)](https://discord.com/users/ivancarlos.me)
-[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal)](https://icc.gg/-signal)
-[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)  
-[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)
-[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)
-[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x)](https://x.com/ivancarlos)  
+[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord&logoColor=white)](https://discord.com/users/ivancarlos.me)
+[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal&logoColor=white)](https://icc.gg/-signal)
+[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram&logoColor=white)](https://t.me/ivancarlos)  
+[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram&logoColor=white)](https://instagram.com/ivancarlos)
+[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads&logoColor=white)](https://threads.net/@ivancarlos)
+[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x&logoColor=white)](https://x.com/ivancarlos)  
 [![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B?logo=linktree&logoColor=white)](https://ivancarlos.me)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&logo=githubsponsors&color=ffc0cb)][sponsor]
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&logo=githubsponsors&logoColor=white&color=ffc0cb)][sponsor]
 
 ## 📃 License
 [MIT](LICENSE) © [Ivan Carlos][ivancarlos]
