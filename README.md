@@ -8,7 +8,6 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
 [![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
-[![Security](https://img.shields.io/badge/Security-Dependabot%20Active-success)](https://github.com/ivancarlosti/gwauditor/security/advisories)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-View%20Here-purple)](https://github.com/ivancarlosti/gwauditor/CODE_OF_CONDUCT.md)
 [![Contributor Covenant](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/CODE_OF_CONDUCT.md)
 
