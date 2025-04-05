@@ -59,7 +59,7 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 
 ## 🧑‍💻 Consulting and technical support
 * For personal support and queries, please submit a new issue to have it addressed.
-* For commercial related questions, please contact me directly forconsulting costs. 
+* For commercial related questions, please contact me directly for consulting costs. 
 
 ## 🩷 Project support
 | If you found this project helpful, consider |
