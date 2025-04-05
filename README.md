@@ -12,12 +12,12 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 
 ## 🌐 Connect With Me  
 
-[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x)](https://x.com/ivancarlos)  
-[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)  
-[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)  
-[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)  
-[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord)](https://discord.com/users/ivancarlos.me)  
-[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal)](https://icc.gg/-signal)  
+[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x)](https://x.com/ivancarlos)
+[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)
+[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)
+[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)
+[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord)](https://discord.com/users/ivancarlos.me)
+[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal)](https://icc.gg/-signal)
 
 ## Details
 This script collects users, groups, mailboxes delegation, Shared Drives, YouTube accounts, Analytics accounts, policies of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed. This project also offer extra features:
