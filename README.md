@@ -1,5 +1,7 @@
 # Google Workspace Auditor script
+This script collects users, groups and Shared Drives of a Google Workspace environment on .xlsx file for audit and review purposes
 
+## Status
 <a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?style=flat" /></a>
 <a target="_blank" href="https://github.com/ivancarlosti/gwauditor"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor" /></a>
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)](https://github.com/sponsors/ivancarlosti)
@@ -26,7 +28,6 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 You can find scripts related to mailbox delegation and mailbox archive to group in `Other scripts` folder
 
 ## Instructions
-
 * Save all .ps1 files locally (download [here](https://github.com/ivancarlosti/gwauditor/zipball/master))
 * Change variables of `mainscript.ps1` if needed
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
@@ -45,7 +46,6 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 *.zip file content*
 
 ## Requirements
-
 * Windows 10+ or Windows Server 2019+
 * [GAM v7+](https://github.com/GAM-team/GAM/) using multiproject setup 
 * PowerShell
@@ -53,15 +53,13 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 
 ---
 
-## Donation
-
+## Project support
 | If you found this project helpful, consider |
 | :---: |
 [**buying me a coffee**][buymeacoffee], [**donate by paypal**][paypal], [**sponsor this project**][sponsor] or just [**leave a star**](../..)⭐
 |Thanks for your support, it is much appreciated!|
 
 ## License
-
 [MIT](LICENSE) © [Ivan Carlos][ivancarlos]
 
 [cc]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project
