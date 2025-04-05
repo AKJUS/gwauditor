@@ -10,7 +10,7 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 [![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
 [![Security](https://img.shields.io/badge/Security-Dependabot%20Active-success)](https://github.com/ivancarlosti/gwauditor/security/advisories)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-View%20Here-purple)](https://github.com/ivancarlosti/gwauditor/CODE_OF_CONDUCT.md)
-[![Contributor Covenant](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
+[![Contributor Covenant](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/CODE_OF_CONDUCT.md)
 
 This script collects users, groups, mailboxes delegation, Shared Drives, YouTube accounts, Analytics accounts, policies of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed. This project also offer extra features:
 - Archive mailbox messages to group
