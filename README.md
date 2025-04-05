@@ -4,6 +4,12 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 ## Status
 <a target="_blank" href="./"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=Stars&style=flat" /></a>
 <a target="_blank" href="./"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor?label=Last%20Commit" /></a>
+https://github.com/ivancarlosti/gwauditor/commits/main/
+# My Project
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/username/repo)](./commits)  
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/username/repo)](./pulse)  
+
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
