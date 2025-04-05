@@ -2,11 +2,9 @@
 This script collects users, groups and Shared Drives of a Google Workspace environment on .xlsx file for audit and review purposes
 
 ## Status
-<a target="_blank" href="./"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=Stars&style=flat" /></a>
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/gwauditor/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/gwauditor?label=Last%20Commit)](https://github.com/ivancarlosti/gwauditor/commits)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/gwauditor?label=Commit%20Activity)](https://github.com/ivancarlosti/gwauditor/pulse)  
-
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/gwauditor?label=Commit%20Activity)](https://github.com/ivancarlosti/gwauditor/pulse)
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
