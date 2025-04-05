@@ -4,21 +4,10 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/gwauditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/gwauditor/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/gwauditor?label=Last%20Commit)](https://github.com/ivancarlosti/gwauditor/commits)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/gwauditor?label=Commit%20Activity)](https://github.com/ivancarlosti/gwauditor/pulse)
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor?label=Issues)](https://github.com/ivancarlosti/gwauditor/issues)  
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor?label=License)](LICENSE)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
 [![Security](https://img.shields.io/badge/Security-View%20Here-blue)](https://github.com/ivancarlosti/gwauditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/gwauditor/tree/main?tab=coc-ov-file)
-
-## 🌐 Connect With Me  
-
-[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord)](https://discord.com/users/ivancarlos.me)
-[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal)](https://icc.gg/-signal)
-[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)
-[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)
-[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)
-[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x)](https://x.com/ivancarlos)
-
 
 ## Details
 This script collects users, groups, mailboxes delegation, Shared Drives, YouTube accounts, Analytics accounts, policies of a [Google Workspace](https://workspace.google.com/) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed. Note that it's prepared to run on [GAM](https://github.com/GAM-team/GAM/) configured for multiple projects, change accordly if needed. This project also offer extra features:
@@ -68,17 +57,27 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 
 ---
 
-## Consulting and technical support
+## 🧑‍💻 Consulting and technical support
 * For personal support and queries, please submit a new issue to have it addressed.
 * For commercial related questions, please contact me directly forconsulting costs. 
 
-## Project support
+## 🩷 Project support
 | If you found this project helpful, consider |
 | :---: |
 [**buying me a coffee**][buymeacoffee], [**donate by paypal**][paypal], [**sponsor this project**][sponsor] or just [**leave a star**](../..)⭐
 |Thanks for your support, it is much appreciated!|
 
-## License
+## 🌐 Connect With Me
+[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord)](https://discord.com/users/ivancarlos.me)
+[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal)](https://icc.gg/-signal)
+[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram)](https://t.me/ivancarlos)  
+[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram)](https://instagram.com/ivancarlos)
+[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads)](https://threads.net/@ivancarlos)
+[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x)](https://x.com/ivancarlos)  
+[![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B?logo=linktree&logoColor=white)](https://ivancarlos.me)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&logo=githubsponsors&color=ffc0cb)][sponsor]
+
+## 📃 License
 [MIT](LICENSE) © [Ivan Carlos][ivancarlos]
 
 [cc]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project
