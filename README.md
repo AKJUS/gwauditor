@@ -4,6 +4,7 @@ This script collects users, groups and Shared Drives of a Google Workspace envir
 ## Status
 <a target="_blank" href="./"><img src="https://img.shields.io/github/stars/ivancarlosti/gwauditor?style=flat" /></a>
 <a target="_blank" href="./"><img src="https://img.shields.io/github/last-commit/ivancarlosti/gwauditor" /></a>
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/gwauditor)](./issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/gwauditor)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors)][sponsor]
 
@@ -54,8 +55,9 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 
 ---
 
-## Consulting and technical support 
-For personal support and queries, please 
+## Consulting and technical support
+* For personal support and queries, please submit a new issue to have it addressed.
+* For commercial related questions, please contact me directly forconsulting costs. 
 
 ## Project support
 | If you found this project helpful, consider |
