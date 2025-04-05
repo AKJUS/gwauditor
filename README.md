@@ -68,14 +68,15 @@ You can find scripts related to mailbox delegation and mailbox archive to group 
 |Thanks for your support, it is much appreciated!|
 
 ## 🌐 Connect with me
-[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2?logo=discord&logoColor=white)](https://discord.com/users/ivancarlos.me)
-[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9?logo=signal&logoColor=white)](https://icc.gg/-signal)
-[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4?logo=telegram&logoColor=white)](https://t.me/ivancarlos)  
-[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F?logo=instagram&logoColor=white)](https://instagram.com/ivancarlos)
-[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-000000?logo=threads&logoColor=white)](https://threads.net/@ivancarlos)
-[![X](https://img.shields.io/badge/X-@ivancarlos-000000?logo=x&logoColor=white)](https://x.com/ivancarlos)  
-[![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B?logo=linktree&logoColor=white)](https://ivancarlos.me)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&logo=githubsponsors&logoColor=white&color=ffc0cb)][sponsor]
+[![Instagram](https://img.shields.io/badge/Instagram-@ivancarlos-E4405F)](https://instagram.com/ivancarlos)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-@ivancarlos-0077B5)](https://www.linkedin.com/in/ivancarlos)
+[![Threads](https://img.shields.io/badge/Threads-@ivancarlos-808080)](https://threads.net/@ivancarlos)
+[![X](https://img.shields.io/badge/X-@ivancarlos-000000)](https://x.com/ivancarlos)  
+[![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2)](https://discord.com/users/ivancarlos.me)
+[![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9)](https://icc.gg/-signal)
+[![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4)](https://t.me/ivancarlos)  
+[![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B)](https://ivancarlos.me)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&color=ffc0cb)][sponsor]
 
 ## 📃 License
 [MIT](LICENSE) © [Ivan Carlos][ivancarlos]
