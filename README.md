@@ -29,7 +29,7 @@ Check `testing-guideline.md` file as suggestion for testing guideline
 You can find scripts related to mailbox delegation and mailbox archive to group in `Other scripts` folder
 
 ## Instructions
-* Save all .ps1 files locally (download [here](/ivancarlosti/gwauditor/zipball/master))
+* Save all .ps1 files locally (download [here](/zipball/master))
 * Change variables of `mainscript.ps1` if needed
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
 * Follow instructions selecting project name, option 1 to generate audit report and collect .zip file on `$destinationpath`
