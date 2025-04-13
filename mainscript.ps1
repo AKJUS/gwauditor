@@ -1,4 +1,4 @@
-# Main script
+## Main script
 
 # set variables
 $GAMpath = "C:\GAM7"
